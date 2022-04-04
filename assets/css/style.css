@@ -29,6 +29,7 @@ header {
     width: 100%;
     justify-content: space-between;
     text-align: right;
+    background: linear-gradient(white, rgba(255, 255, 255, 0));
 }
 
 main {
@@ -47,9 +48,6 @@ button {
     border: 1px solid var(--accent);
     background-color: var(--light);
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    background-color: var(--light);
 }
 
 button:hover {
@@ -67,8 +65,6 @@ a {
     text-decoration: none;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    background-color: var(--light);
 }
 
 a:hover {
@@ -108,12 +104,10 @@ aside {
 #leaderboard {
     display: flex;
     flex-direction: column-reverse;
-    order: descending;
     justify-content: space-between;
-    width: 40%;
-    margin: auto;
+    margin: 0px auto 100px auto;
     border-top: 1px solid var(--dark);
-    padding-bottom: 100px;
+    width: 792px;
 }
 
 li {
@@ -125,7 +119,7 @@ li {
 
 input[type="text"] {
     border: 1px solid var(--dark);
-    margin: 25px auto 10px auto;
+    margin: 25px auto 25px auto;
     font-size: 22px;
     align-items: center;
     text-align: center;
@@ -134,15 +128,14 @@ input[type="text"] {
 
 input[type="submit"] {
     padding: 15px 30px;
+    margin: 30px;
     font-size: 22px;
     border: 1px solid var(--accent);
     background-color: var(--light);
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    background-color: var(--light);
 }
 
+/* minus 10 animation */
 .hidden {
     color: var(--light);
     transition: 0.5s;
@@ -150,4 +143,102 @@ input[type="submit"] {
 
 #visible {
     color: red;
+}
+
+
+/* tablets */
+@media screen and (max-width: 992px) {
+
+    #quiz {
+        width: 85%;
+    }
+    
+    .answer {
+        font-size: 24px;
+        width: 75%;
+    }
+
+    #leaderboard {
+        width: 75%;
+    }
+
+}
+
+/* large phones */
+@media screen and (max-width: 768px) {
+
+    p {
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+    button {
+        font-size: 18px;
+    }
+    
+    a {
+        font-size: 18px;
+    }
+
+    #quiz {
+        width: 90%;
+    }
+    
+    .answer {
+        font-size: 20px;
+        width: 85%;
+    }
+
+    #leaderboard {
+        margin: 0px auto 50px auto;
+        width: 85%;
+    }
+
+    input[type="text"] {
+        font-size: 20px;
+    }
+    
+    input[type="submit"] {
+        font-size: 18px;
+    }
+
+}
+
+/* small phones */
+@media screen and (max-width: 576px) {
+
+    p {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    button {
+        font-size: 16px;
+    }
+    
+    a {
+        font-size: 16px;
+    }
+
+    #quiz {
+        width: 95%;
+    }
+    
+    .answer {
+        font-size: 18px;
+        width: 85%;
+    }
+
+    #leaderboard {
+        width: 85%;
+    }
+
+    input[type="text"] {
+        font-size: 18px;
+    }
+    
+    input[type="submit"] {
+        font-size: 16px;
+    }
+
 }
