@@ -1,0 +1,153 @@
+/* varables */
+:root {
+    --light: white;
+    --dark: black;
+    --accent: DarkGoldenRod;
+    --accent2: rgba(184, 135, 11, 0.25);
+}
+
+/* font styles */
+h1 {
+    font-size: 3em;
+    padding: 25px;
+}
+
+h2 {
+    font-size: 2em;
+    padding: 25px;
+}
+
+p {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+/* page styles */
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    text-align: right;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    padding: 25px;
+}
+
+button {
+    padding: 15px 30px;
+    margin: 30px;
+    font-size: 22px;
+    border: 1px solid var(--accent);
+    background-color: var(--light);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--light);
+}
+
+button:hover {
+    background-color: var(--accent);
+    color: var(--light);
+    cursor: pointer;
+}
+
+a {
+    padding: 15px 30px;
+    font-size: 22px;
+    border: 1px solid var(--accent);
+    background-color: var(--light);
+    color: var(--dark);
+    text-decoration: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--light);
+}
+
+a:hover {
+    background-color: var(--accent);
+    color: var(--light);
+    cursor: pointer;
+}
+
+#timer {
+    color: var(--accent);
+}
+
+#quiz {
+    width: 80%;
+    margin: auto;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer {
+    font-size: 24px;
+    width: 50%;
+    margin: 10px auto;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#leaderboard {
+    display: flex;
+    flex-direction: column-reverse;
+    order: descending;
+    justify-content: space-between;
+    width: 40%;
+    margin: auto;
+    border-top: 1px solid var(--dark);
+    padding-bottom: 100px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    border-bottom: 2px dotted var(--accent2)
+}
+
+input[type="text"] {
+    border: 1px solid var(--dark);
+    margin: 25px auto 10px auto;
+    font-size: 22px;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+input[type="submit"] {
+    padding: 15px 30px;
+    font-size: 22px;
+    border: 1px solid var(--accent);
+    background-color: var(--light);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--light);
+}
+
+.hidden {
+    color: var(--light);
+    transition: 0.5s;
+}
+
+#visible {
+    color: red;
+}
