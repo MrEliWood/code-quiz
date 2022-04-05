@@ -13,5 +13,5 @@ If the user is unsuccessful, their score would be 0 so they are not prompted to 
 View the live demo at the following link:
 https://mreliwood.github.io/homework-code-quiz/
 
-![Screenshot of codeQuiz landing page](/assets/images/Screen%20Shot%202022-04-04%20at%205.34.08%20PM.png)
-![Screenshot of codeQuiz high scores](/assets/images/Screen%20Shot%202022-04-04%20at%205.36.12%20PM.png)
+![Screenshot of codeQuiz landing page](/assets/images/Screen%20Shot%202022-04-04%20at%207.06.24%20PM.png)
+![Screenshot of codeQuiz high scores](/assets/images/Screen%20Shot%202022-04-04%20at%207.06.32%20PM.png)
