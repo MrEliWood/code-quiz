@@ -24,6 +24,7 @@ var answer3 = document.querySelector("#a3");
 var player = document.querySelector("#player");
 var submitScore = document.querySelector("#submitScore");
 var aside = document.querySelector("aside");
+var highScores = document.querySelector("#highscores");
 var leaderboard = document.querySelector("#leaderboard");
 
 // hide quiz and game over
@@ -61,10 +62,38 @@ var questions = [
     },
 
     {
+        ask: "How do you link a JavaScript file to an HTML file?",
+        correct: `<script src="./assets/js/script.js"></script>`,
+        incorrectA: `<script src="script.javascript"></script>`,
+        incorrectB: `<java src="./assets/js/script.js"></java>`
+    },
+
+    {
+        ask: "What is this?",
+        correct: `Method`,
+        incorrectA: `Common`,
+        incorrectB: `Magnitude`
+    },
+
+    {
         ask: "What does CSS stand for?",
         correct: `Cascading Style Sheets`,
         incorrectA: `Cool Styling System`,
         incorrectB: `Code Software Styling`
+    },
+
+    {
+        ask: "This sentence += is the same as",
+        correct: `This sentence = This sentence + is the same as`,
+        incorrectA: `More than or equal to`,
+        incorrectB: `Is the same as this sentence`
+    },
+
+    {
+        ask: "What does it mean when // appears before text",
+        correct: `That line is a comment, not code`,
+        incorrectA: `// is used to mean "or"`,
+        incorrectB: `This is not used in JavaScript`
     },
 
     {
@@ -75,17 +104,17 @@ var questions = [
     },
 
     {
-        ask: "What year was javaScript invented?",
-        correct: `1995`,
-        incorrectA: `2007`,
-        incorrectB: `1984`
+        ask: "Which is the correct format of a for loop?",
+        correct: `for (var i = 0; i < array.length; i++) {}`,
+        incorrectA: `for (i > 0) {i++}`,
+        incorrectB: `if (var i = 0; i < var; i--) {}`
     },
 
     {
-        ask: "what is the correct syntax for linking a JavaScript file to an HTML file?",
-        correct: `<script src="./assets/js/script.js"></script>`,
-        incorrectA: `<script src="script.javascript"></script>`,
-        incorrectB: `<java src="./assets/js/script.js"></java>`
+        ask: "which symbol is used to define a variable?",
+        correct: `=`,
+        incorrectA: `==`,
+        incorrectB: `===`
     },
 
     {
@@ -141,6 +170,7 @@ function renderQuestion() {
 function minusTen() {
 
     minus.setAttribute("id","visible");
+
     var OneSecond = 1;
 
     minusInterval = setInterval(function() {
@@ -226,7 +256,24 @@ submitScore.addEventListener("click", function(event) {
     aside.style.display = "block";
     leaderboard.innerHTML += `<li style="order: ${secondsLeft}"><h3>${player.value}</h3><h3>${secondsLeft}</h3></li>`;
     localStorage.setItem("playerScores", leaderboard.innerHTML);
-    window.location.reload();
-    window.scrollTo(0, document.body.scrollHeight);
+    location.reload();
 
 });
+
+// scroll to highscores on page load
+window.onload = function() {
+
+    window.scrollTo(0, document.body.scrollHeight);
+
+    var timeDelay = 1;
+
+    minusInterval = setInterval(function() {
+        timeDelay--;
+
+        if (timeDelay === 0) {
+            window.scrollTo(0, 0);
+        }
+
+    }, 1000);
+
+};
