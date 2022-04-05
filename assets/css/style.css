@@ -101,7 +101,8 @@ a:hover {
 
 .answer {
     font-size: 24px;
-    width: 50%;
+    min-width: 750px;
+    max-width: 1000px;
     margin: 10px auto;
 }
 
@@ -136,7 +137,7 @@ li {
 input[type="text"] {
     border: none;
     
-    margin: 25px auto 0px auto;
+    margin: 50px auto 0px auto;
     font-size: 22px;
     align-items: center;
     text-align: center;
@@ -146,7 +147,7 @@ input[type="text"] {
 
 input[type="submit"] {
     padding: 15px 30px;
-    margin: 30px;
+    margin: 25px;
     font-size: 22px;
     border: 1px solid var(--accent);
     background-color: var(--light);
@@ -164,10 +165,20 @@ input:focus {
     outline:none;
 }
 
+input:focus::placeholder {
+    color: transparent;
+  }
+
+#timeSpan {
+    font-size: 6em;
+    color: var(--accent);
+    padding: 0px;
+}
+
 /* minus 10 animation */
 .hidden {
     font-size: 2em;
-    color: rgba(255, 0, 0, 0);
+    color: transparent;
     transition: 0.5s;
 }
 
@@ -176,18 +187,6 @@ input:focus {
     color: red;
     line-height: 1.5;
 }
-
-#timeSpan {
-    font-size: 6em;
-    color: var(--accent);
-    padding: 0px;
-}
-
-.glow {
-    color: var(--accent);
-    transition: none;
-}
-
 
 /* tablets */
 @media screen and (max-width: 992px) {
@@ -206,12 +205,14 @@ input:focus {
     }
 
     #quiz {
-        width: 85%;
+        width: 95%;
     }
     
     .answer {
         font-size: 24px;
-        width: 75%;
+        width: 95%;
+        min-width: 85%;
+        max-width: 100%;
     }
 
     #leaderboard {
@@ -245,12 +246,12 @@ input:focus {
     }
 
     #quiz {
-        width: 90%;
+        width: 98%;
     }
     
     .answer {
         font-size: 22px;
-        width: 85%;
+        width: 98%;
     }
 
     #leaderboard {
@@ -291,14 +292,9 @@ input:focus {
     a {
         font-size: 18px;
     }
-
-    #quiz {
-        width: 95%;
-    }
     
     .answer {
         font-size: 20px;
-        width: 85%;
     }
 
     input[type="text"] {

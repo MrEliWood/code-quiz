@@ -21,11 +21,13 @@ var answer2 = document.querySelector("#a2");
 var answer3 = document.querySelector("#a3");
 
 // score variables
-var player = document.querySelector("#player");
+var player = document.querySelector(".player");
 var submitScore = document.querySelector("#submitScore");
 var aside = document.querySelector("aside");
 var highScores = document.querySelector("#highscores");
 var leaderboard = document.querySelector("#leaderboard");
+
+console.log(player)
 
 // hide quiz and game over
 quiz.style.display = "none";
@@ -221,9 +223,10 @@ function gameOver() {
         timeout.style.display = "block";
     } else {
         over.style.display = "block";
-        player.setAttribute("autofocus", "autofocus");
         clearInterval(timerInterval);
-        timeSpan.textContent = secondsLeft
+        timeSpan.textContent = secondsLeft;
+
+        console.log(player)
     }
 };
 
