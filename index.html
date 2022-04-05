@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
+    <title>codeQuiz</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
@@ -14,7 +14,7 @@
 
     <header>
 
-        <h2>Code Quiz</h2>
+        <h2>codeQuiz</h2>
         <h2>Score / Time: <span id="timer"></span><br>
             <span class="hidden">-10</span></h2>
 
@@ -24,15 +24,11 @@
 
         <div id="intro">
 
-            <h1 id="headline">Code Quiz</h1>
+            <h1 id="headline">codeQuiz</h1>
 
-            <p>Answer JavaScript questions as fast as you can.<br>
-            The time remaining at the end of the game is your score.<br>
-            You will lose 10 seconds for every wrong answer.<br>
-            <br>
-            When you're ready, press start to begin.</p>
+            <h2 id="tagline">10 questions, 60 seconds</h2>
 
-            <button id="start">START</button>
+            <button id="start">GO</button>
 
         </div>
 
@@ -52,14 +48,12 @@
 
         <div id="over">
 
-            <h1 id="headline">Nice work!</h1>
-            <p>You completed all questions with <span id="timeSpan"></span> seconds remaining.<br>
-            <br>
-            Save your score:</p>
+            <h1 id="timeSpan"></h1>
+            <h1 id="headline">Seconds Remaining</h1>
 
             <form>
-                <input type="text" placeholder="Your Name" id="player"><br><br>
-                <a href="#highscores" id="submitScore">SUBMIT</a>
+                <input type="text" placeholder="Enter Your Name" id="player"><br>
+                <input type="submit" id="submitScore" value="SAVE SCORE" href="#highscores">
             </form>
 
         </div>
@@ -67,7 +61,6 @@
         <div id="timeout">
 
             <h1 id="headline">Time's up!</h1>
-            <p>Would you like to try again?</p>
             <button id="retry" onClick="window.location.reload();">RETRY</button>
 
         </div>

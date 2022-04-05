@@ -23,13 +23,13 @@ var answer3 = document.querySelector("#a3");
 // score variables
 var player = document.querySelector("#player");
 var submitScore = document.querySelector("#submitScore");
+var aside = document.querySelector("aside");
 var leaderboard = document.querySelector("#leaderboard");
 
 // hide quiz and game over
 quiz.style.display = "none";
 over.style.display = "none";
 timeout.style.display = "none";
-
 
 // countdown timer
 var secondsLeft = 60;
@@ -191,7 +191,9 @@ function gameOver() {
         timeout.style.display = "block";
     } else {
         over.style.display = "block";
+        player.setAttribute("autofocus", "autofocus");
         clearInterval(timerInterval);
+        timeSpan.textContent = secondsLeft
     }
 };
 
@@ -207,6 +209,8 @@ start.addEventListener("click", function() {
 var savedScores = localStorage.getItem("playerScores");
 if (savedScores) {
     leaderboard.innerHTML = savedScores;
+} else {
+    aside.style.display = "none";
 }
 
 // save new score to local storage
@@ -218,7 +222,11 @@ submitScore.addEventListener("click", function(event) {
     //     return;
     // };
 
+    event.preventDefault();
+    aside.style.display = "block";
     leaderboard.innerHTML += `<li style="order: ${secondsLeft}"><h3>${player.value}</h3><h3>${secondsLeft}</h3></li>`;
     localStorage.setItem("playerScores", leaderboard.innerHTML);
+    window.location.reload();
+    window.scrollTo(0, document.body.scrollHeight);
 
-}, false);
+});
